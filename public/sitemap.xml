@@ -3,21 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://j3rmbadger.com/about/</loc>
+    <lastmod>2018-01-18T15:28:40-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://j3rmbadger.com/post/2018-01-18-first-post/</loc>
+    <lastmod>2018-01-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://j3rmbadger.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/posts/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
+    <loc>https://j3rmbadger.com/tags/post/</loc>
+    <lastmod>2018-01-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://j3rmbadger.com/categories/post/</loc>
+    <lastmod>2018-01-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://j3rmbadger.com/post/</loc>
+    <lastmod>2018-01-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://j3rmbadger.com/tags/</loc>
+    <lastmod>2018-01-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://j3rmbadger.com/</loc>
+    <lastmod>2018-01-18T15:28:40-05:00</lastmod>
     <priority>0</priority>
   </url>
   

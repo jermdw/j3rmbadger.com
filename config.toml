@@ -1,31 +1,26 @@
-baseurl = "/"
+baseurl = "https://j3rmbadger.com/"
+title = "j3rmbadger.com"
+theme = "hugo-theme-nix"
 languageCode = "en-us"
-title = "Classic"
-theme = "hugo-classic"
-googleAnalytics = ""
-ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
-preserveTaxonomyNames = true
-footnotereturnlinkcontents = "↩"
+# disqusShortname = "your_disqus_shortname"
 
-[permalinks]
-    post = "/post/:year/:month/:day/:slug/"
-
-[[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-[[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    weight = 2
-[[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 3
-[[menu.feed]]
-    name = "Subscribe"
-    url = "/index.xml"
+[menu]
+  [[menu.header]]
+    name = "post"
+    weight = 0
+    url = "/post"
 
 [params]
-    description = "A simple, minimal blog for those who love text."
-    footer = "Open-Source | [Github](https://github.com/goodroot/hugo-classic) | [Twitter](https://twitter.com/thegoodroot)"
+  GithubID = "jermdw"
+  TwitterID = "h0neybdg3r"
+#  GnuPGFingerprint = "your_gpg_fingerprint"
+#  LinkedInID = "your_linkedin"
+#  GoogleplusID = "your_googleplus"
+#  FacebookID = "your_facebook"
+#  TelegramID = "your_telegram"
+  Name = "j3rmbadger"
+  HeaderUsername = "j3rmbadger"
+  HeaderHostname = "blog"
+  Email = "j3rmbadger@hbcyber.com"
+  About = "I'm j3rmbadger, an Incident Responder, and this is my blog. Let's be honest, the Blue Team (Incident Response) side of things isn't shown enough love. There are an overwhelming number of excellent blogs out there for the Offensive Security side of the coin. I'd like to use this blog to share ideas, project and thoughts on how to detect, respond to, and ultimately mitigate information security incidents. Enjoy!"
+  ProfilePicture = "/profile.jpg"
