@@ -1,7 +1,8 @@
-baseurl = "https://j3rmbadger.com/"
+baseurl = "http://j3rmbadger.com/"
 title = "j3rmbadger.com"
 theme = "hugo-theme-nix"
 languageCode = "en-us"
+publishDir = "docs"
 # disqusShortname = "your_disqus_shortname"
 
 [menu]

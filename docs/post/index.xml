@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on j3rmbadger.com</title>
-    <link>https://j3rmbadger.com/post/</link>
+    <link>http://j3rmbadger.com/post/</link>
     <description>Recent content in Posts on j3rmbadger.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 18 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://j3rmbadger.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://j3rmbadger.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>First Post</title>
-      <link>https://j3rmbadger.com/post/2018-01-18-first-post/</link>
+      <link>http://j3rmbadger.com/post/2018-01-18-first-post/</link>
       <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://j3rmbadger.com/post/2018-01-18-first-post/</guid>
+      <guid>http://j3rmbadger.com/post/2018-01-18-first-post/</guid>
       <description>New Blog First Post Hooray!</description>
     </item>
     
