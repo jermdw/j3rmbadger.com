@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All logs go to heaven | j3rmbadger.com</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/theme-override.css">
+    <header>
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="/">/home/j3rmbadger.com</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/">~/home</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/categories/">~/categories</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/tags/">~/tags</a>
+      </li>
+      
+
+      
+      
+      <li class="pull-right">
+        <a href="/index.xml">~/subscribe</a>
+      </li>
+      
+
+    </ul>
+  </nav>
+</header>
+
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">All logs go to heaven</span></h1>
+
+<h2 class="date">2018/04/23</h2>
+<p class="terms">
+  
+  
+  
+  
+  
+</p>
+</div>
+
+
+
+<main>
+
+
+<h3 id="all-logs-go-to-heaven">All Logs Go To Heaven</h3>
+
+<p>It&rsquo;s 9:00 PM. Do you know where your logs are? Hopefully in the cloud, far away from the grease smeared, Miller High-Life soaked fingers of the local datacenter sputz who is one brainzap away from disappearing your logs from existence.</p>
+
+<p>Sending your logs to the cloud can be a solution if you don&rsquo;t have the time or convenience of maintaining on premises infrastructure that can be costly and time consuming to maintain. Sending Windows event logs to a centralized store in the cloud provides benefits especially when it comes to monitoring endpoints that are frequently in disparate locations located outside of enterprise infrastructure. When it comes to handling information security incidents, we don&rsquo;t always have the time and luxury for an endpoint to sign-on to VPN or phyiscally return to the enterprise network in order to get the vital telemetry that is necessary for us to identify who, what, and when something <em>bad</em> may have happened. We want all the <em>important and valuable logs</em> as often as we can afford and allow.</p>
+
+<p>Your logs belong in a safe space, let&rsquo;s get them there.</p>
+
+<p><img src="/img/dog.jpg" alt="alt text" title="Busy later?" /></p>
+
+<h4 id="sysmon-101">Sysmon 101</h4>
+
+<p>If you haven&rsquo;t already, get <a href="https://blogs.technet.microsoft.com/motiba/2016/10/18/sysinternals-sysmon-unleashed/">Sysmon</a> installed and going on your endpoints. I recommend this <a href="https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml">configuration</a> as a solid baseline to build from.</p>
+
+<h4 id="let-s-get-clouding">Let&rsquo;s Get Clouding</h4>
+
+<p>Once that&rsquo;s up and running on an endpoint or two, let&rsquo;s get to the cloudcity. Microsoft Azure provides us the ability to do this relatively painlessly. Start out by signing up for a <a href="https://azure.microsoft.com/en-us/">free trial</a> account if you don&rsquo;t already have one. Meet back here once this is complete.</p>
+
+<p>I&rsquo;m more of a <a href="http://cloud.google.com/">Google Cloud Platform</a> guy myself but there&rsquo;s no downside to being comfortable in multiple cloud environments and Microsoft provides some compelling offerings for affordable prices <em>(free)</em> when it comes to dealing with Windows endpoints. Oh, did I mention they provide an agent for forwarding <em>Linux Syslog</em> to the same centralized console? Tell me about it, Microsoft has some a hell of a long way from the 90&rsquo;s&hellip;</p>
+
+<p>The first <code>5Gb</code> of logs ingested are <a href="https://azure.microsoft.com/en-us/pricing/details/log-analytics/">free</a>.</p>
+
+<p><img src="/img/pricing.png" alt="alt text" title="Can't beat FREE" /></p>
+
+<p>Microsoft provides documentation on downloading and installing the agents <a href="https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-collect-windows-computer">here</a>. Once you&rsquo;ve got your workspace ID and key entered in respectively, give it a few minutes and you should see a <code>heartbeat</code> from your endpoint appear in the monitoring console.</p>
+
+<p><img src="/img/heartbeat.png" alt="alt text" title="My heart beats for you" /></p>
+
+<h4 id="free-sysmayne">Free Sysmayne</h4>
+
+<p>Time to free the <code>Sysmayne</code>. So that&rsquo;s great we&rsquo;ve got heartbeats, but let&rsquo;s get some sysmon rolling so we can actually see what&rsquo;s going on.</p>
+
+<p>In order to get sysmon logs flowing to the primary OMS console, it&rsquo;s as simple as going back to the primary workspace and under <code>Advanced Settings -&gt; Data -&gt; Windows Event Logs</code> add <code>Microsoft-Windows-Sysmon/Operational</code> to the event logs to be collected. A drop-down won&rsquo;t appear as you type is this is not a pre-defined log category at this point in time.</p>
+
+<p><img src="/img/sysmon.png" alt="alt text" title="Sysmayne" /></p>
+
+<p>Now we can start <a href="https://blogs.technet.microsoft.com/motiba/2017/12/07/sysinternals-sysmon-suspicious-activity-guide/">digging</a> through these logs from a *centralized, always available console that isn&rsquo;t prey to the whims of our security engineers and their willingness to keep infrastructure running! Enjoy!</p>
+
+<p>Let&rsquo;s look at network connections (Sysmon event ID 3):</p>
+
+<pre><code>// See some sysmon goodness :)
+Event
+| where EventLog == &quot;Microsoft-Windows-Sysmon/Operational&quot;
+|where EventID == 3
+</code></pre>
+
+<p>Results:</p>
+
+<p><img src="/img/sysmon3.png" alt="alt text" title="not too shabby" /></p>
+
+<p>The logs need some parsing and cleaning up but it&rsquo;s a good start and best of all it&rsquo;s free for the first 5 GB. Hit me up on <a href="https://twitter.com/h0neybdg3r">Twitter</a> with feedback, thanks for your time and hope this helps to get folks started <code>logging to the cloud</code>.</p>
+
+</main>
+
+    <footer>
+      
+<script>
+(function() {
+  function center_el(tagName) {
+    var tags = document.getElementsByTagName(tagName), i, tag;
+    for (i = 0; i < tags.length; i++) {
+      tag = tags[i];
+      var parent = tag.parentElement;
+      
+      if (parent.childNodes.length === 1) {
+        
+        if (parent.nodeName === 'A') {
+          parent = parent.parentElement;
+          if (parent.childNodes.length != 1) continue;
+        }
+        if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+      }
+    }
+  }
+  var tagNames = ['img', 'embed', 'object'];
+  for (var i = 0; i < tagNames.length; i++) {
+    center_el(tagNames[i]);
+  }
+})();
+</script>
+
+      
+      <hr/>
+      Open-Source | <a href="https://github.com/jermdw">Github</a> | <a href="https://twitter.com/h0neybdg3r">Twitter</a>
+      
+    </footer>
+  </body>
+</html>
+
