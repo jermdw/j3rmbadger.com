@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on j3rmbadger.com</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on j3rmbadger.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>All logs go to heaven</title>
+      <link>/post/2018/04/23/all-logs-go-to-heaven/</link>
+      <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018/04/23/all-logs-go-to-heaven/</guid>
+      <description>All Logs Go To Heaven It&amp;rsquo;s 9:00 PM. Do you know where your logs are? Hopefully in the cloud, far away from the grease smeared, Miller High-Life soaked fingers of the local datacenter sputz who is one brainzap away from disappearing your logs from existence.
+Sending your logs to the cloud can be a solution if you don&amp;rsquo;t have the time or convenience of maintaining on premises infrastructure that can be costly and time consuming to maintain.</description>
+    </item>
+    
+  </channel>
+</rss>
