@@ -2,7 +2,6 @@ baseurl = "/"
 languageCode = "en-us"
 title = "j3rmbadger.com"
 theme = "hugo-classic"
-googleAnalytics = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 preserveTaxonomyNames = true
 enableEmoji = true
@@ -28,6 +27,6 @@ footnotereturnlinkcontents = "↩"
     url = "/index.xml"
 
 [params]
-    description = "A simple, minimal blog for those who love text."
+    description = "All things incident response, all things honeybadger, j3rmbadger.com"
     footer = "Open-Source | [Github](https://github.com/jermdw) | [Twitter](https://twitter.com/h0neybdg3r)"
     custom_css = ["css/theme-override.css"]
