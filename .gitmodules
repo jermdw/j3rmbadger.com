@@ -4,3 +4,7 @@
 [submodule "themes/hugo-theme-nix"]
 	path = themes/hugo-theme-nix
 	url = git@github.com:jermdw/hugo-theme-nix.git
+[submodule "public"]
+	path = public
+	url = git@github.com:jermdw/jermdw.github.io.git
+	branch = master
