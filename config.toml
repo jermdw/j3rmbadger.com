@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "j3rmbadger.com"
 theme = "hugo-classic"
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+disqusShortname = "yihui"
 preserveTaxonomyNames = true
 enableEmoji = true
 footnotereturnlinkcontents = "↩"
